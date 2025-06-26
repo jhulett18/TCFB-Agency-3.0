@@ -1,0 +1,50 @@
+{
+  "name": "tcfb-agency-3.0",
+  "version": "1.0.0",
+  "description": "TCFB Agency Food Finder App with Google Maps Integration",
+  "keywords": [
+    "typescript",
+    "react",
+    "google-maps",
+    "food-finder",
+    "agency"
+  ],
+  "main": "src/index.tsx",
+  "dependencies": {
+    "@googlemaps/react-wrapper": "^1.2.0",
+    "@szhsin/react-menu": "4.4.1",
+    "@types/google.maps": "^3.58.1",
+    "classnames": "2.5.1",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-pro-sidebar": "1.1.0",
+    "react-scripts": "5.0.1",
+    "zustand": "5.0.5"
+  },
+  "devDependencies": {
+    "@types/node": "20.10.0",
+    "@types/react": "18.2.38",
+    "@types/react-dom": "18.2.15",
+    "@typescript-eslint/eslint-plugin": "6.13.0",
+    "@typescript-eslint/parser": "6.13.0",
+    "eslint": "8.54.0",
+    "eslint-config-react-app": "7.0.1",
+    "eslint-plugin-react": "7.33.2",
+    "eslint-plugin-react-hooks": "4.6.0",
+    "typescript": "4.9.5"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "lint": "eslint src --ext .ts,.tsx",
+    "lint:fix": "eslint src --ext .ts,.tsx --fix"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}

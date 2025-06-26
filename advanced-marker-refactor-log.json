@@ -1,0 +1,126 @@
+{
+  "refactor_log": {
+    "project": "TCFB-Agency-3.0",
+    "component": "InteractiveMap",
+    "goal": "Refactor to use AdvancedMarker component with custom icons",
+    "date": "2024-12-19",
+    "initial_state": {
+      "package": "@react-google-maps/api@2.20.6",
+      "marker_type": "Regular Marker",
+      "icon_handling": "Complex icon caching with useEffect and setTimeout",
+      "issues": [
+        "Complex icon preloading logic",
+        "Delayed icon creation (1 second timeout)",
+        "Verbose console logging",
+        "Potential race conditions"
+      ]
+    },
+    "attempts": [
+      {
+        "attempt": 1,
+        "approach": "Direct AdvancedMarker implementation",
+        "package": "@googlemaps/react-wrapper@1.2.0",
+        "issues": [
+          "TypeScript error: Cannot find module '@googlemaps/react-wrapper'",
+          "Development server cache issue"
+        ],
+        "solution": "Package was installed but dev server needed restart",
+        "status": "Resolved after dev server restart"
+      },
+      {
+        "attempt": 2,
+        "approach": "AdvancedMarker with custom DOM elements",
+        "implementation": {
+          "marker_creation": "new window.google.maps.marker.AdvancedMarker()",
+          "custom_elements": "document.createElement('div') with img elements",
+          "icon_paths": "/icons/{iconType}.png"
+        },
+        "issues": [
+          "TypeScript error: Property 'AdvancedMarker' does not exist on type 'typeof marker'",
+          "Runtime error: AdvancedMarker is not a constructor"
+        ],
+        "root_cause": "AdvancedMarker not available in current Google Maps API version",
+        "status": "Failed - API compatibility issue"
+      },
+      {
+        "attempt": 3,
+        "approach": "Type assertion workaround",
+        "implementation": "const AdvancedMarker = (window.google.maps.marker as any).AdvancedMarker",
+        "issues": [
+          "Runtime error: AdvancedMarker is not a constructor"
+        ],
+        "status": "Failed - API not available at runtime"
+      }
+    ],
+    "final_solution": {
+      "approach": "Enhanced Regular Marker with custom icons",
+      "package": "@googlemaps/react-wrapper@1.2.0",
+      "implementation": {
+        "marker_type": "window.google.maps.Marker",
+        "icon_configuration": {
+          "url": "/icons/{iconType}.png",
+          "scaledSize": "new window.google.maps.Size(iconSize, iconSize)",
+          "origin": "new window.google.maps.Point(0, 0)",
+          "anchor": "new window.google.maps.Point(iconSize / 2, iconSize / 2)"
+        },
+        "dynamic_sizing": {
+          "selected_size": 48,
+          "default_size": 32,
+          "scale_factor": 1.5
+        },
+        "visual_enhancements": {
+          "opacity": {
+            "selected": 1.0,
+            "default": 0.95
+          },
+          "zIndex": {
+            "selected": 1000,
+            "default": 1
+          },
+          "animation": "window.google.maps.Animation.BOUNCE for selected markers"
+        }
+      },
+      "benefits": [
+        "Full compatibility with current Google Maps API",
+        "Custom icons work perfectly",
+        "Dynamic sizing based on selection",
+        "Smooth animations and visual feedback",
+        "No complex caching logic needed",
+        "Immediate icon loading"
+      ]
+    },
+    "key_learnings": [
+      "AdvancedMarker is not universally available in Google Maps API",
+      "Regular Marker with custom icons provides same visual result",
+      "TypeScript types may not reflect runtime API availability",
+      "@googlemaps/react-wrapper is the modern approach for React + Google Maps",
+      "Dynamic icon sizing is more effective than complex caching"
+    ],
+    "code_changes": {
+      "removed": [
+        "Complex icon caching useEffect",
+        "setTimeout delays",
+        "Icon cache state management",
+        "Verbose console logging"
+      ],
+      "added": [
+        "Dynamic icon size calculation",
+        "Z-index layering",
+        "Bounce animation for selected markers",
+        "Simplified icon configuration"
+      ]
+    },
+    "final_dependencies": {
+      "@googlemaps/react-wrapper": "^1.2.0",
+      "@types/google.maps": "latest"
+    },
+    "success_metrics": [
+      "✅ Custom icons display correctly",
+      "✅ Markers respond to agency card selection",
+      "✅ Selected markers are 1.5x larger",
+      "✅ Smooth animations work",
+      "✅ No runtime errors",
+      "✅ TypeScript compilation successful"
+    ]
+  }
+} 

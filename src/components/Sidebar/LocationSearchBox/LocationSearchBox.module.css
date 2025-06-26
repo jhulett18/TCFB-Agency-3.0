@@ -1,0 +1,107 @@
+.container {
+  background-color: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  padding: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.locationButtonWrapper {
+  margin-bottom: 1rem;
+}
+
+.locationButton {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+  background-color: #ebf4f1;
+  border: 1px solid #c1dad2;
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: #23523c;
+  font-size: 0.9rem;
+}
+
+.locationButton:hover {
+  background-color: #d4e8e0;
+  border-color: #a8c5b8;
+}
+
+.inputWrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.searchInput {
+  flex: 1;
+  padding: 0.75rem;
+  border: 1px solid #dee2e6;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  transition: border-color 0.2s ease;
+}
+
+.searchInput:focus {
+  outline: none;
+  border-color: #23523c;
+  box-shadow: 0 0 0 3px rgba(35, 82, 60, 0.1);
+}
+
+.searchButton {
+  background-color: #23523c;
+  color: #fff;
+  border: none;
+  padding: 0.75rem 1.25rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: background-color 0.2s ease;
+  white-space: nowrap;
+}
+
+.searchButton:hover:not(:disabled) {
+  background-color: #1a3f2e;
+}
+
+.searchButton:disabled {
+  background-color: #6c757d;
+  cursor: not-allowed;
+}
+
+.searchButtonLabel {
+  font-weight: 500;
+}
+
+.clearButton {
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 0.75rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+.clearButton:hover {
+  background-color: #c82333;
+}
+
+.searchInfo {
+  margin-top: 0.75rem;
+  padding: 0.5rem 0.75rem;
+  background-color: #e3f2fd;
+  border-radius: 4px;
+  border-left: 3px solid #1976d2;
+}
+
+.searchInfo small {
+  color: #1976d2;
+  font-size: 0.85rem;
+}

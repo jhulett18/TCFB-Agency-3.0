@@ -1,0 +1,193 @@
+.agency-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.agency-card {
+  background: white;
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  padding: 1.25rem;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+}
+
+.agency-card:hover {
+  border-color: #23523c;
+  box-shadow: 0 4px 8px rgba(35, 82, 60, 0.15);
+  transform: translateY(-2px);
+}
+
+.agency-card.active {
+  border-color: #23523c;
+  background: #ebf4f1;
+  box-shadow: 0 4px 12px rgba(35, 82, 60, 0.2);
+  border-left: 4px solid #23523c;
+}
+
+.agency-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.agency-name {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #23523c;
+  flex: 1;
+}
+
+.agency-distance {
+  background: #e6f2e6;
+  color: #317032;
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  white-space: nowrap;
+  margin-left: 0.75rem;
+}
+
+.agency-address {
+  margin-bottom: 1rem;
+}
+
+.agency-address p {
+  margin: 0.25rem 0;
+  color: #495057;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.agency-phone {
+  margin-bottom: 1rem;
+}
+
+.agency-phone a {
+  color: #23523c;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.agency-phone a:hover {
+  color: #1a3f2e;
+  text-decoration: underline;
+}
+
+.agency-programs {
+  font-size: 0.85rem;
+  color: #495057;
+  line-height: 1.4;
+}
+
+.agency-programs strong {
+  color: #23523c;
+}
+
+.welcome-section {
+  background: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.welcome-section h3 {
+  margin: 0 0 0.75rem 0;
+  color: #23523c;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.welcome-section > p {
+  margin: 0 0 1rem 0;
+  color: #495057;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+.welcome-suggestions {
+  background: white;
+  border-radius: 6px;
+  padding: 1rem;
+  border-left: 4px solid #23523c;
+}
+
+.welcome-suggestions p {
+  margin: 0 0 0.5rem 0;
+  color: #23523c;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.welcome-suggestions ul {
+  margin: 0 0 1rem 0;
+  padding-left: 1.25rem;
+}
+
+.welcome-suggestions li {
+  margin: 0.25rem 0;
+  color: #495057;
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+
+.search-results-header {
+  background: #ebf4f1;
+  border: 1px solid #c1dad2;
+  border-radius: 6px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.search-results-header h3 {
+  margin: 0 0 0.5rem 0;
+  color: #23523c;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.search-results-header p {
+  margin: 0;
+  color: #317032;
+  font-size: 0.9rem;
+}
+
+.load-more-container {
+  text-align: center;
+  margin: 1rem 0;
+}
+
+.load-more-button {
+  background: #23523c;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+.load-more-button:hover {
+  background: #1a3f2e;
+}
+
+.agency-list-empty {
+  text-align: center;
+  padding: 2rem;
+  color: #6c757d;
+}
+
+.agency-list-empty p {
+  margin: 0;
+  font-size: 1rem;
+} 
