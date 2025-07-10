@@ -1,0 +1,143 @@
+.custom-marker .marker-circle {
+  width: 16px;
+  height: 16px;
+  background-color: #1e90ff;
+  border-radius: 50%;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.selected-marker .marker-circle {
+  transform: scale(1.8);
+  background-color: #ff5733;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
+}
+
+.custom-marker .marker-icon {
+  width: 32px;
+  height: 32px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.selected-marker .marker-icon {
+  transform: scale(1.8);
+  filter: drop-shadow(0 0 6px rgba(0, 0, 0, 0.5));
+}
+
+.map-container {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.map-error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  padding: 2rem;
+  text-align: center;
+  background-color: #ffebee;
+  color: #d32f2f;
+}
+
+.map-error h3 {
+  margin: 0 0 1rem 0;
+  font-size: 1.5rem;
+  color: #d32f2f;
+}
+
+.map-error p {
+  margin: 0.5rem 0;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #666;
+}
+
+.map-error code {
+  background-color: #f5f5f5;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-family: 'Courier New', monospace;
+  font-size: 0.9rem;
+  color: #333;
+  border: 1px solid #ddd;
+  display: inline-block;
+  margin: 0.5rem 0;
+}
+
+.map-error a {
+  color: #1976d2;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.map-error a:hover {
+  text-decoration: underline;
+}
+
+.map-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  font-size: 1.2rem;
+  color: #1976d2;
+  background-color: #e3f2fd;
+}
+
+.info-window {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  max-width: 260px;
+  padding: 12px;
+}
+
+.info-window h3 {
+  margin: 0 0 8px 0;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.info-window p {
+  margin: 4px 0;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.directions-link {
+  color: #0066cc;
+  text-decoration: underline;
+  font-size: 0.9rem;
+  display: inline-block;
+  margin-top: 8px;
+}
+
+.directions-link:hover {
+  color: #004499;
+}
+
+/* Custom marker styles */
+.custom-marker {
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.custom-marker:hover {
+  transform: scale(1.1);
+}
+
+.marker-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 2px solid white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.selected-marker .marker-icon {
+  border-color: #1976d2;
+  box-shadow: 0 0 0 3px rgba(25, 118, 210, 0.3);
+}

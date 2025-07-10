@@ -1,0 +1,140 @@
+/* ===== Responsive Layout for App.tsx ===== */
+
+/* Hide toggle button on desktop */
+.toggle-view-btn {
+  display: none;
+}
+
+/* Hide/show containers by class */
+.hidden-mobile {
+  display: none !important;
+}
+
+/* Responsive main content: flex row on desktop, block on mobile */
+.main-content-responsive {
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+}
+
+.sidebar-responsive {
+  /* width: 400px; */
+  min-width: 300px;
+  max-width: 100vw;
+  height: 100vh;
+}
+
+.map-responsive {
+  flex: 1;
+  min-width: 0;
+  height: 100vh;
+}
+
+@media (max-width: 750px) {
+  .main-content-responsive {
+    display: block;
+    width: 100vw !important;
+    height: calc(100vh - 56px) !important;
+    min-width: 0 !important;
+    min-height: 0 !important;
+    position: relative;
+    background: #f7f7f7;
+  }
+  .sidebar-responsive {
+    width: 100vw !important;
+    max-width: 100vw !important;
+    min-width: 0 !important;
+    height: calc(100vh - 56px) !important;
+    min-height: 0 !important;
+    max-height: 100vh !important;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    background: #f7f7f7;
+    overflow-y: auto;
+    box-sizing: border-box;
+    display: block !important;
+  }
+  .sidebar-responsive.hidden-mobile {
+    display: none !important;
+  }
+  .map-responsive {
+    background: #fff;
+    width: 100vw !important;
+    height: calc(100vh - 56px) !important;
+    min-width: 0 !important;
+    min-height: 0 !important;
+    max-width: 100vw !important;
+    max-height: 100vh !important;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    overflow-y: auto;
+    box-sizing: border-box;
+    display: block !important;
+  }
+  .map-responsive.hidden-mobile {
+    display: none !important;
+  }
+  /* Floating toggle button */
+  .toggle-btn-group {
+    position: fixed;
+    top: 16px;
+    right: 16px;
+    z-index: 1002;
+    display: flex;
+    gap: 8px;
+  }
+  .toggle-view-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: static;
+    border: none;
+    border-radius: 6px;
+    font-family: inherit;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-decoration: none;
+    user-select: none;
+    padding: 8px 16px;
+    font-size: 1rem;
+    min-height: 40px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    color: #fff;
+    text-align: center;
+  }
+  /* Main Site button: gold */
+  .toggle-btn-group a.toggle-view-btn {
+    background-color: #db9d1e;
+  }
+  .toggle-btn-group a.toggle-view-btn:hover,
+  .toggle-btn-group a.toggle-view-btn:focus {
+    background-color: #b8860b;
+    outline: 2px solid #fff;
+    box-shadow: 0 0 0 3px #db9d1e;
+  }
+  /* Map/List View button: green */
+  .toggle-btn-group button.toggle-view-btn {
+    background-color: #0a5627;
+  }
+  .toggle-btn-group button.toggle-view-btn:hover,
+  .toggle-btn-group button.toggle-view-btn:focus {
+    background-color: #063d1a;
+    outline: 2px solid #fff;
+    box-shadow: 0 0 0 3px #0a5627;
+  }
+  .slogan_text {
+    display: none !important;
+  }
+  .helpButton {
+    display: none !important;
+  }
+} 

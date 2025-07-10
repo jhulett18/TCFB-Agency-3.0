@@ -1,0 +1,1300 @@
+[
+  {
+    "id": "7196",
+    "name": "Church Of God By Faith",
+    "coordinates": {
+      "lat": 27.750084,
+      "lng": -80.445203
+    },
+    "distance": "",
+    "address": "8580 58th Avenue",
+    "city": "Sebastian",
+    "state": "FL",
+    "zip": "32958",
+    "country": "United States",
+    "phone": "772-589-2670",
+    "directionsUrl": "https://www.google.com/maps/dir//8580+58th+Avenue,+Sebastian,+FL",
+    "hours": "Mondays 10:30am - 1pm",
+    "programs": [
+      "pantry"
+    ]
+  },
+  {
+    "id": "7201",
+    "name": "Operation Hope",
+    "coordinates": {
+      "lat": 27.767677,
+      "lng": -80.577924
+    },
+    "distance": "",
+    "address": "12285 CR 512",
+    "city": "Fellsmere",
+    "state": "FL",
+    "zip": "32948",
+    "country": "United States",
+    "phone": "321-403-2604",
+    "directionsUrl": "https://www.google.com/maps/dir//12285+CR+512,+Fellsmere,+FL",
+    "hours": "1st & 3rd Saturday of each month 9am - 2pm",
+    "programs": [
+      "pantry"
+    ]
+  },
+  {
+    "id": "7203",
+    "name": "Roseland Ecumenical Food Pantry",
+    "coordinates": {
+      "lat": 27.833522,
+      "lng": -80.495325
+    },
+    "distance": "",
+    "address": "8205 129th Court",
+    "city": "Sebastian",
+    "state": "FL",
+    "zip": "32958",
+    "country": "United States",
+    "phone": "772-589-3035",
+    "directionsUrl": "https://www.google.com/maps/dir//8205+129th+Court,+Sebastian,+FL",
+    "hours": "Monday, Wednesday & Friday 9am - 12pm",
+    "programs": [
+      "pantry"
+    ]
+  },
+  {
+    "id": "7204",
+    "name": "Saint Helen Catholic Church",
+    "coordinates": {
+      "lat": 27.638643,
+      "lng": -80.397274
+    },
+    "distance": "",
+    "address": "1031 18th Street, Suite F & G",
+    "city": "Vero Beach",
+    "state": "FL",
+    "zip": "32960",
+    "country": "United States",
+    "phone": "772-567-5193",
+    "directionsUrl": "https://www.google.com/maps/dir//1031+18th+Street,+Suite+F+&+G,+Vero Beach,+FL",
+    "hours": "Monday - Friday 9:30am - 1pm",
+    "programs": [
+      "pantry"
+    ]
+  },
+  {
+    "id": "7205",
+    "name": "St. Sebastian Conference of St. Vincent de Paul",
+    "coordinates": {
+      "lat": 27.748719,
+      "lng": -80.440974
+    },
+    "distance": "",
+    "address": "5480 85th Street",
+    "city": "Vero Beach",
+    "state": "FL",
+    "zip": "32967",
+    "country": "United States",
+    "phone": "772-589-3312",
+    "directionsUrl": "https://www.google.com/maps/dir//5480+85th+Street,+Vero Beach,+FL",
+    "hours": "Tuesdays & Thursdays 9am - 1pm",
+    "programs": [
+      "pantry"
+    ]
+  },
+  {
+    "id": "7207",
+    "name": "The Source I am Ministries",
+    "coordinates": {
+      "lat": 27.619945,
+      "lng": -80.390012
+    },
+    "distance": "",
+    "address": "1015 Commerce Avenue",
+    "city": "Vero Beach",
+    "state": "FL",
+    "zip": "32960",
+    "country": "United States",
+    "phone": "772-564-0202",
+    "directionsUrl": "https://www.google.com/maps/dir//1015+Commerce+Avenue,+Vero Beach,+FL",
+    "hours": "Soup Kitchen: Monday, Tuesday, Thursday, Friday 8am - 5pm & Wednesday 8am - 1pm",
+    "programs": [
+      "soup-kitchen"
+    ]
+  },
+  {
+    "id": "7234",
+    "name": "Booth's Cafe",
+    "coordinates": {
+      "lat": 27.19452,
+      "lng": -80.240023
+    },
+    "distance": "",
+    "address": "821 SE Martin Luther King Jr. Blvd",
+    "city": "Stuart",
+    "state": "FL",
+    "zip": "34994",
+    "country": "United States",
+    "phone": "772-288-1471",
+    "directionsUrl": "https://www.google.com/maps/dir//821+SE+Martin+Luther+King+Jr.+Blvd,+Stuart,+FL",
+    "hours": "Soup Kitchen: Fridays 5pm - 6pm",
+    "programs": [
+      "soup-kitchen"
+    ]
+  },
+  {
+    "id": "7238",
+    "name": "C.R.O.S. Ministries",
+    "coordinates": {
+      "lat": 27.01956,
+      "lng": -80.463062
+    },
+    "distance": "",
+    "address": "15451 SW 150th Street",
+    "city": "Indiantown",
+    "state": "FL",
+    "zip": "34956",
+    "country": "United States",
+    "phone": "561-233-9009",
+    "directionsUrl": "https://www.google.com/maps/dir//15451+SW+150th+Street,+Indiantown,+FL",
+    "hours": "Tuesdays 11am - 4pm",
+    "programs": [
+      "pantry"
+    ]
+  },
+  {
+    "id": "7241",
+    "name": "Hands of Hope Community Development",
+    "coordinates": {
+      "lat": 27.191807,
+      "lng": -80.241999
+    },
+    "distance": "",
+    "address": "828 SE Nassau Avenue",
+    "city": "Stuart",
+    "state": "FL",
+    "zip": "34994",
+    "country": "United States",
+    "phone": "772-834-5823",
+    "directionsUrl": "https://www.google.com/maps/dir//828+SE+Nassau+Avenue,+Stuart,+FL",
+    "hours": "2nd & 4th Thursday of each month 4pm - 6pm",
+    "programs": [
+      "pantry"
+    ]
+  },
+  {
+    "id": "7249",
+    "name": "Jensen Beach Christian Church",
+    "coordinates": {
+      "lat": 27.245918,
+      "lng": -80.227012
+    },
+    "distance": "",
+    "address": "1890 NE Church Street",
+    "city": "Jensen Beach",
+    "state": "FL",
+    "zip": "34957",
+    "country": "United States",
+    "phone": "772-631-7331",
+    "directionsUrl": "https://www.google.com/maps/dir//1890+NE+Church+Street,+Jensen Beach,+FL",
+    "hours": "Saturdays 8am - 10am",
+    "programs": [
+      "pantry"
+    ]
+  },
+  {
+    "id": "7252",
+    "name": "Redeemer Lutheran Church",
+    "coordinates": {
+      "lat": 27.194927,
+      "lng": -80.219322
+    },
+    "distance": "",
+    "address": "2450 SE Ocean Blvd",
+    "city": "Stuart",
+    "state": "FL",
+    "zip": "34996",
+    "country": "United States",
+    "phone": "772-286-0911",
+    "directionsUrl": "https://www.google.com/maps/dir//2450+SE+Ocean+Blvd,+Stuart,+FL",
+    "hours": "Soup Kitchen: Thursdays 5pm - 6pm",
+    "programs": [
+      "soup-kitchen"
+    ]
+  },
+  {
+    "id": "7253",
+    "name": "Salvation Army",
+    "coordinates": {
+      "lat": 27.194543,
+      "lng": -80.240045
+    },
+    "distance": "",
+    "address": "821 SE Martin Luther King Jr. Blvd",
+    "city": "Stuart",
+    "state": "FL",
+    "zip": "34994",
+    "country": "United States",
+    "phone": "772-288-1471 ext 201",
+    "directionsUrl": "https://www.google.com/maps/dir//821+SE+Martin+Luther+King+Jr.+Blvd,+Stuart,+FL",
+    "hours": "Monday - Friday 9am - 12pm & 1pm - 2pm",
+    "programs": [
+      "pantry"
+    ]
+  },
+  {
+    "id": "7256",
+    "name": "St. Vincent De Paul",
+    "coordinates": {
+      "lat": 27.0587699,
+      "lng": -80.1352986
+    },
+    "distance": "",
+    "address": "12001 SE Federal Highway, Suite D",
+    "city": "Hobe Sound",
+    "state": "FL",
+    "zip": "33455",
+    "country": "United States",
+    "phone": "772-546-2492",
+    "directionsUrl": "https://www.google.com/maps/dir//12001+SE+Federal+Highway,+Suite+D,+Hobe Sound,+FL",
+    "hours": "Monday - Friday 9am - 12pm",
+    "programs": [
+      "pantry"
+    ]
+  },
+  {
+    "id": "7265",
+    "name": "Church of God Prince of Peace",
+    "coordinates": {
+      "lat": 27.410879,
+      "lng": -80.333676
+    },
+    "distance": "",
+    "address": "5905 Oleander Avenue",
+    "city": "Fort Pierce",
+    "state": "FL",
+    "zip": "34982",
+    "country": "United States",
+    "phone": "772-429-2211",
+    "directionsUrl": "https://www.google.com/maps/dir//5905+Oleander+Avenue,+Fort Pierce,+FL",
+    "hours": "2nd & 4th Wednesday of each month 9:30am - 12pm",
+    "programs": [
+      "pantry"
+    ]
+  },
+  {
+    "id": "7267",
+    "name": "Faith Temple Community Development Center",
+    "coordinates": {
+      "lat": 27.468212,
+      "lng": -80.353661
+    },
+    "distance": "",
+    "address": "2805 Avenue T",
+    "city": "Fort Pierce",
+    "state": "FL",
+    "zip": "34947",
+    "country": "United States",
+    "phone": "772-501-1008",
+    "directionsUrl": "https://www.google.com/maps/dir//2805+Avenue+T,+Fort Pierce,+FL",
+    "hours": "2nd & 3rd Thursday of each month 9am - 12pm",
+    "programs": [
+      "pantry"
+    ]
+  },
+  {
+    "id": "7271",
+    "name": "Fort Pierce Seventh Day Adventist Church",
+    "coordinates": {
+      "lat": 27.424955,
+      "lng": -80.35217
+    },
+    "distance": "",
+    "address": "2601 Virginia Avenue",
+    "city": "Fort Pierce",
+    "state": "FL",
+    "zip": "34981",
+    "country": "United States",
+    "phone": "772-466-1844",
+    "directionsUrl": "https://www.google.com/maps/dir//2601+Virginia+Avenue,+Fort Pierce,+FL",
+    "hours": "1st & 3rd Tuesday of each month 12pm - 3pm",
+    "programs": [
+      "pantry"
+    ]
+  },
+  {
+    "id": "7273",
+    "name": "Grace Emmanuel Church",
+    "coordinates": {
+      "lat": 27.3439203,
+      "lng": -80.3294053
+    },
+    "distance": "",
+    "address": "707 Kitterman Road",
+    "city": "Port St. Lucie",
+    "state": "FL",
+    "zip": "34952",
+    "country": "United States",
+    "phone": "772-489-9696",
+    "directionsUrl": "https://www.google.com/maps/dir//707+Kitterman+Road,+Port St. Lucie,+FL",
+    "hours": "Thursdays 8:30am - 10am",
+    "programs": [
+      "pantry"
+    ]
+  },
+  {
+    "id": "7274",
+    "name": "Grace Family Church",
+    "coordinates": {
+      "lat": 27.3464035,
+      "lng": -80.3830158
+    },
+    "distance": "",
+    "address": "6300 NW West Torino Parkway",
+    "city": "Port St. Lucie",
+    "state": "FL",
+    "zip": "34986",
+    "country": "United States",
+    "phone": "772-878-2040",
+    "directionsUrl": "https://www.google.com/maps/dir//6300+NW+West+Torino+Parkway,+Port St. Lucie,+FL",
+    "hours": "1st & 3rd Saturday of each month 8am - 10am",
+    "programs": [
+      "pantry"
+    ]
+  },
+  {
+    "id": "7275",
+    "name": "GraceWay Village - Cafe",
+    "coordinates": {
+      "lat": 27.431951,
+      "lng": -80.365373
+    },
+    "distance": "",
+    "address": "1780 Hartman Road",
+    "city": "Fort Pierce",
+    "state": "FL",
+    "zip": "34947",
+    "country": "United States",
+    "phone": "772-925-3074",
+    "directionsUrl": "https://www.google.com/maps/dir//1780+Hartman+Road,+Fort Pierce,+FL",
+    "hours": "Soup Kitchen: Sundays, Tuesdays, Wednesdays, & Thursdays 5pm - 6pm",
+    "programs": [
+      "soup-kitchen"
+    ]
+  },
+  {
+    "id": "7276",
+    "name": "Greater New Bethel Missionary Baptist Church",
+    "coordinates": {
+      "lat": 27.448896,
+      "lng": -80.330858
+    },
+    "distance": "",
+    "address": "305 N 8th Street",
+    "city": "Fort Pierce",
+    "state": "FL",
+    "zip": "34950",
+    "country": "United States",
+    "phone": "772-489-0485",
+    "directionsUrl": "https://www.google.com/maps/dir//305+N+8th+Street,+Fort Pierce,+FL",
+    "hours": "2nd & 4th Thursday of each month 1pm - 3pm",
+    "programs": [
+      "pantry"
+    ]
+  },
+  {
+    "id": "7277",
+    "name": "Hartman Road Church of Christ",
+    "coordinates": {
+      "lat": 27.436131,
+      "lng": -80.364954
+    },
+    "distance": "",
+    "address": "1010 Hartman Road",
+    "city": "Fort Pierce",
+    "state": "FL",
+    "zip": "34947",
+    "country": "United States",
+    "phone": "772-409-4602",
+    "directionsUrl": "https://www.google.com/maps/dir//1010+Hartman+Road,+Fort Pierce,+FL",
+    "hours": "2nd & 4th Saturday of each month 9am - 11am",
+    "programs": [
+      "pantry"
+    ]
+  },
+  {
+    "id": "7280",
+    "name": "In the Image of Christ, Inc.",
+    "coordinates": {
+      "lat": 27.455343,
+      "lng": -80.32981
+    },
+    "distance": "",
+    "address": "707 N 7th Street",
+    "city": "Fort Pierce",
+    "state": "FL",
+    "zip": "34950",
+    "country": "United States",
+    "phone": "772-461-7788",
+    "directionsUrl": "https://www.google.com/maps/dir//707+N+7th+Street,+Fort Pierce,+FL",
+    "hours": "Mondays, Wednesdays & Fridays 10am \u2013 12pm & 1pm - 3pm",
+    "programs": [
+      "pantry"
+    ]
+  },
+  {
+    "id": "7281",
+    "name": "Lighthouse Baptist Church",
+    "coordinates": {
+      "lat": 27.337623,
+      "lng": -80.325963
+    },
+    "distance": "",
+    "address": "6731 S US Highway 1",
+    "city": "Port St. Lucie",
+    "state": "FL",
+    "zip": "34952",
+    "country": "United States",
+    "phone": "772-408-3108",
+    "directionsUrl": "https://www.google.com/maps/dir//6731+S+US+Highway+1,+Port St. Lucie,+FL",
+    "hours": "2nd Saturday & 4th Friday of each month 9am - 12pm",
+    "programs": [
+      "pantry"
+    ]
+  },
+  {
+    "id": "7282",
+    "name": "Macedonia Seventh Day Adventist Church",
+    "coordinates": {
+      "lat": 27.443896,
+      "lng": -80.336455
+    },
+    "distance": "",
+    "address": "1220 Delaware Avenue",
+    "city": "Fort Pierce",
+    "state": "FL",
+    "zip": "34950",
+    "country": "United States",
+    "phone": "772-464-1119",
+    "directionsUrl": "https://www.google.com/maps/dir//1220+Delaware+Avenue,+Fort Pierce,+FL",
+    "hours": "Wednesdays 9am - 12pm",
+    "programs": [
+      "pantry"
+    ]
+  },
+  {
+    "id": "7283",
+    "name": "Ministerio Jesus Cristo Es El Camino",
+    "coordinates": {
+      "lat": 27.379438,
+      "lng": -80.333626
+    },
+    "distance": "",
+    "address": "4600 Oleander Avenue",
+    "city": "Fort Pierce",
+    "state": "FL",
+    "zip": "34982",
+    "country": "United States",
+    "phone": "NaN",
+    "directionsUrl": "https://www.google.com/maps/dir//4600+Oleander+Avenue,+Fort Pierce,+FL",
+    "hours": "1st & 3rd Friday of each month 8am - 12pm",
+    "programs": [
+      "pantry"
+    ]
+  },
+  {
+    "id": "7284",
+    "name": "Mustard Seed Ministries",
+    "coordinates": {
+      "lat": 27.471642,
+      "lng": -80.335602
+    },
+    "distance": "",
+    "address": "3130 S US Highway 1",
+    "city": "Fort Pierce",
+    "state": "FL",
+    "zip": "34982",
+    "country": "United States",
+    "phone": "772-465-6021",
+    "directionsUrl": "https://www.google.com/maps/dir//3130+S+US+Highway+1,+Fort Pierce,+FL",
+    "hours": "Monday \u2013 Thursday 9am - 12pm",
+    "programs": [
+      "pantry"
+    ]
+  },
+  {
+    "id": "7285",
+    "name": "Omega Baptist Church",
+    "coordinates": {
+      "lat": 27.267603,
+      "lng": -80.369737
+    },
+    "distance": "",
+    "address": "1665 SW Biltmore Street",
+    "city": "Port St. Lucie",
+    "state": "FL",
+    "zip": "34984",
+    "country": "United States",
+    "phone": "786-290-1164",
+    "directionsUrl": "https://www.google.com/maps/dir//1665+SW+Biltmore+Street,+Port St. Lucie,+FL",
+    "hours": "Wednesdays 12pm - 4pm",
+    "programs": [
+      "pantry"
+    ]
+  },
+  {
+    "id": "7287",
+    "name": "Sarah\u2019s Kitchen - First Bethel Baptist Church",
+    "coordinates": {
+      "lat": 27.452752,
+      "lng": -80.333889
+    },
+    "distance": "",
+    "address": "506 N 11th Street",
+    "city": "Fort Pierce",
+    "state": "FL",
+    "zip": "34950",
+    "country": "United States",
+    "phone": "772-834-2818",
+    "directionsUrl": "https://www.google.com/maps/dir//506+N+11th+Street,+Fort Pierce,+FL",
+    "hours": "Soup Kitchen: Tuesdays 4:30pm - 6pm & Thursdays 3pm - 4:30pm",
+    "programs": [
+      "soup-kitchen"
+    ]
+  },
+  {
+    "id": "7288",
+    "name": "Sarah\u2019s Kitchen - First Congregational Church",
+    "coordinates": {
+      "lat": 27.270584,
+      "lng": -80.303591
+    },
+    "distance": "",
+    "address": "2401 SE Sidonia Street",
+    "city": "Port St. Lucie",
+    "state": "FL",
+    "zip": "34952",
+    "country": "United States",
+    "phone": "772-834-2818",
+    "directionsUrl": "https://www.google.com/maps/dir//2401+SE+Sidonia+Street,+Port St. Lucie,+FL",
+    "hours": "Soup Kitchen: Wednesdays 4:30pm - 6pm",
+    "programs": [
+      "soup-kitchen"
+    ]
+  },
+  {
+    "id": "7298",
+    "name": "Mustard Seed Ministries",
+    "coordinates": {
+      "lat": 27.31725,
+      "lng": -80.316078
+    },
+    "distance": "",
+    "address": "8311 S US Highway 1 ",
+    "city": "Port St. Lucie",
+    "state": "FL",
+    "zip": "34952",
+    "country": "United States",
+    "phone": "NaN",
+    "directionsUrl": "https://www.google.com/maps/dir//8311+S+US+Highway+1+,+Port St. Lucie,+FL",
+    "hours": "Monday - Wednesday 1pm - 4pm",
+    "programs": [
+      "pantry"
+    ]
+  },
+  {
+    "id": "7299",
+    "name": "Church of God of Prophecy",
+    "coordinates": {
+      "lat": 27.25407,
+      "lng": -80.831528
+    },
+    "distance": "",
+    "address": "102 NW 10th Street",
+    "city": "Okeechobee",
+    "state": "FL",
+    "zip": "34972",
+    "country": "United States",
+    "phone": "863-763-4059",
+    "directionsUrl": "https://www.google.com/maps/dir//102+NW+10th+Street,+Okeechobee,+FL",
+    "hours": "1st & 3rd Wednesday of each month 8am - 10am",
+    "programs": [
+      "pantry"
+    ]
+  },
+  {
+    "id": "7301",
+    "name": "The Food Pantry of Indian River County",
+    "coordinates": {
+      "lat": 27.630916,
+      "lng": -80.408192
+    },
+    "distance": "",
+    "address": "2206 16th Avenue",
+    "city": "Vero Beach",
+    "state": "FL",
+    "zip": "32960",
+    "country": "Indian River",
+    "phone": "772-770-2068",
+    "directionsUrl": "https://www.google.com/maps/dir//2206+16th+Avenue,+Vero Beach,+FL",
+    "hours": "Mondays, Wednesdays & Fridays 8:30am - 12pm  Tuesdays & Thursdays 2pm - 5pm",
+    "programs": [
+      "pantry"
+    ]
+  },
+  {
+    "id": "7304",
+    "name": "Okeechobee Church of God",
+    "coordinates": {
+      "lat": 27.246239,
+      "lng": -80.826923
+    },
+    "distance": "",
+    "address": "301 NE 4th Avenue",
+    "city": "Okeechobee",
+    "state": "FL",
+    "zip": "34972",
+    "country": "NaN",
+    "phone": "863-763-4127",
+    "directionsUrl": "https://www.google.com/maps/dir//301+NE+4th+Avenue,+Okeechobee,+FL",
+    "hours": "1st Monday of each month 6am - 10am 3rd Monday of each month 7am - 9am",
+    "programs": [
+      "pantry"
+    ]
+  },
+  {
+    "id": "7320",
+    "name": "Salvation Army",
+    "coordinates": {
+      "lat": 27.47281,
+      "lng": -80.336018
+    },
+    "distance": "",
+    "address": "3629 S US Highway 1",
+    "city": "Fort Pierce",
+    "state": "FL",
+    "zip": "34982",
+    "country": "United States",
+    "phone": "772-288-1471",
+    "directionsUrl": "https://www.google.com/maps/dir//3629+S+US+Highway+1,+Fort Pierce,+FL",
+    "hours": "Monday - Friday 9am - 12pm (Closed on Wednesdays)",
+    "programs": [
+      "pantry"
+    ]
+  },
+  {
+    "id": "7326",
+    "name": "Indian River County Healthy Start Coalition",
+    "coordinates": {
+      "lat": 27.6296774,
+      "lng": -80.3795392
+    },
+    "distance": "",
+    "address": "1555 Indian River Blvd, B241",
+    "city": "Vero Beach",
+    "state": "FL",
+    "zip": "32960",
+    "country": "United States",
+    "phone": "772-563-9118",
+    "directionsUrl": "https://www.google.com/maps/dir//1555+Indian+River+Blvd,+B241,+Vero Beach,+FL",
+    "hours": "Monday - Friday 9am - 5pm",
+    "programs": [
+      "baby-item-pantry"
+    ]
+  },
+  {
+    "id": "7327",
+    "name": "CareNet Pregnancy Center",
+    "coordinates": {
+      "lat": 27.6430458,
+      "lng": -80.400687
+    },
+    "distance": "",
+    "address": "1503 24th Street",
+    "city": "Vero Beach",
+    "state": "FL",
+    "zip": "32960",
+    "country": "United States",
+    "phone": "772-569-7939",
+    "directionsUrl": "https://www.google.com/maps/dir//1503+24th+Street,+Vero Beach,+FL",
+    "hours": "Monday - Wednesday 9am - 4pm Thursdays 1pm - 8pm",
+    "programs": [
+      "baby-item-pantry"
+    ]
+  },
+  {
+    "id": "7328",
+    "name": "Florida Community Health Center",
+    "coordinates": {
+      "lat": 27.443133,
+      "lng": -80.3393267
+    },
+    "distance": "",
+    "address": "1505 Delaware Avenue",
+    "city": "Fort Pierce",
+    "state": "FL",
+    "zip": "34950",
+    "country": "United States",
+    "phone": "772-461-1402",
+    "directionsUrl": "https://www.google.com/maps/dir//1505+Delaware+Avenue,+Fort Pierce,+FL",
+    "hours": "Mondays 8am - 6pm Tuesday - Friday 8am - 8pm Saturdays 8am - 5pm",
+    "programs": [
+      "baby-item-pantry"
+    ]
+  },
+  {
+    "id": "7335",
+    "name": "Salvation Army",
+    "coordinates": {
+      "lat": 27.227881,
+      "lng": -80.831594
+    },
+    "distance": "",
+    "address": "1600 SW 2nd Avenue, Unit B",
+    "city": "Okeechobee",
+    "state": "FL",
+    "zip": "34974",
+    "country": "United States",
+    "phone": "863-763-6020",
+    "directionsUrl": "https://www.google.com/maps/dir//1600+SW+2nd+Avenue,+Unit+B,+Okeechobee,+FL",
+    "hours": "Tuesdays 9am - 2pm & Thursdays 9am - 12pm",
+    "programs": [
+      "pantry"
+    ]
+  },
+  {
+    "id": "7336",
+    "name": "The Buggy Bunch",
+    "coordinates": {
+      "lat": 27.638778,
+      "lng": -80.419959
+    },
+    "distance": "",
+    "address": "3306 20th Street",
+    "city": "Vero Beach",
+    "state": "FL",
+    "zip": "32960",
+    "country": "NaN",
+    "phone": "772-226-0066",
+    "directionsUrl": "https://www.google.com/maps/dir//3306+20th+Street,+Vero Beach,+FL",
+    "hours": "Monday - Thursday 9:30am - 3pm Fridays 9:30am - 12pm",
+    "programs": [
+      "baby-item-pantry"
+    ]
+  },
+  {
+    "id": "7337",
+    "name": "Worship Center International",
+    "coordinates": {
+      "lat": 27.346518,
+      "lng": -80.35472
+    },
+    "distance": "",
+    "address": "6501 NW St. James Drive",
+    "city": "Port St. Lucie",
+    "state": "FL",
+    "zip": "34983",
+    "country": "United States",
+    "phone": "772-337-9111",
+    "directionsUrl": "https://www.google.com/maps/dir//6501+NW+St.+James+Drive,+Port St. Lucie,+FL",
+    "hours": "2nd & 4th Saturday of each month 7am - 10am",
+    "programs": [
+      "pantry"
+    ]
+  },
+  {
+    "id": "7343",
+    "name": "GraceWay Village",
+    "coordinates": {
+      "lat": 27.431951,
+      "lng": -80.365373
+    },
+    "distance": "",
+    "address": "1780 Hartman Road",
+    "city": "Fort Pierce",
+    "state": "FL",
+    "zip": "34947",
+    "country": "NaN",
+    "phone": "772-925-3074",
+    "directionsUrl": "https://www.google.com/maps/dir//1780+Hartman+Road,+Fort Pierce,+FL",
+    "hours": "Sundays 4pm - 6pm",
+    "programs": [
+      "pantry"
+    ]
+  },
+  {
+    "id": "7345",
+    "name": "First United Methodist Church",
+    "coordinates": {
+      "lat": 27.318563,
+      "lng": -80.340917
+    },
+    "distance": "",
+    "address": "260 SW Prima Vista Blvd",
+    "city": "Port St. Lucie",
+    "state": "FL",
+    "zip": "34983",
+    "country": "United States",
+    "phone": "772-878-1155",
+    "directionsUrl": "https://www.google.com/maps/dir//260+SW+Prima+Vista+Blvd,+Port St. Lucie,+FL",
+    "hours": "Tuesdays 10am - 12pm",
+    "programs": [
+      "pantry"
+    ]
+  },
+  {
+    "id": "7346",
+    "name": "Good Samaritan Ministries",
+    "coordinates": {
+      "lat": 27.31338,
+      "lng": -80.316504
+    },
+    "distance": "",
+    "address": "8280 Business Park Drive",
+    "city": "Port St. Lucie",
+    "state": "FL",
+    "zip": "34952",
+    "country": "United States",
+    "phone": "772-398-0065",
+    "directionsUrl": "https://www.google.com/maps/dir//8280+Business+Park+Drive,+Port St. Lucie,+FL",
+    "hours": "Thursdays 1pm - 6pm",
+    "programs": [
+      "pantry"
+    ]
+  },
+  {
+    "id": "7347",
+    "name": "First Seventh Day Adventist Church",
+    "coordinates": {
+      "lat": 27.256525,
+      "lng": -80.358774
+    },
+    "distance": "",
+    "address": "320 SW Tulip Blvd",
+    "city": "Port St. Lucie",
+    "state": "FL",
+    "zip": "34953",
+    "country": "United States",
+    "phone": "772-878-4242",
+    "directionsUrl": "https://www.google.com/maps/dir//320+SW+Tulip+Blvd,+Port St. Lucie,+FL",
+    "hours": "2nd & 4th Wednesday of each month 1pm - 4pm",
+    "programs": [
+      "pantry"
+    ]
+  },
+  {
+    "id": "7349",
+    "name": "Casa De Alabanza Venga Tu Reino",
+    "coordinates": {
+      "lat": 27.565742,
+      "lng": -80.370985
+    },
+    "distance": "",
+    "address": "2055 US Highway 1 S",
+    "city": "Vero Beach",
+    "state": "FL",
+    "zip": "32962",
+    "country": "United States",
+    "phone": "772-501-2164",
+    "directionsUrl": "https://www.google.com/maps/dir//2055+US+Highway+1+S,+Vero Beach,+FL",
+    "hours": "1st & 3rd Friday of each month 5pm - 7pm",
+    "programs": [
+      "pantry"
+    ]
+  },
+  {
+    "id": "7351",
+    "name": "Evangelist Deliverance Holiness Church",
+    "coordinates": {
+      "lat": 27.4374953,
+      "lng": -80.3493295
+    },
+    "distance": "",
+    "address": "2425 Okeechobee Road",
+    "city": "Fort Pierce",
+    "state": "FL",
+    "zip": "34950",
+    "country": "United States",
+    "phone": "772-672-0565",
+    "directionsUrl": "https://www.google.com/maps/dir//2425+Okeechobee+Road,+Fort Pierce,+FL",
+    "hours": "1st & 3rd Thursday 12pm - 3pm",
+    "programs": [
+      "pantry"
+    ]
+  },
+  {
+    "id": "7352",
+    "name": "Whole Family Health Center - IRC",
+    "coordinates": {
+      "lat": 27.6609101,
+      "lng": -80.3920653
+    },
+    "distance": "",
+    "address": "981 37th Place ",
+    "city": "Vero Beach",
+    "state": "FL",
+    "zip": "32960",
+    "country": "United States",
+    "phone": "877-345-9342",
+    "directionsUrl": "https://www.google.com/maps/dir//981+37th+Place+,+Vero Beach,+FL",
+    "hours": "Tuesday & Thursday 1pm - 5pm",
+    "programs": [
+      "baby-item-pantry"
+    ]
+  },
+  {
+    "id": "7353",
+    "name": "Whole Family Health Center - SLC",
+    "coordinates": {
+      "lat": 27.4550135,
+      "lng": -80.327508
+    },
+    "distance": "",
+    "address": "725 N US Highway 1",
+    "city": "Fort Pierce",
+    "state": "FL",
+    "zip": "34950",
+    "country": "United States",
+    "phone": "877-345-9342",
+    "directionsUrl": "https://www.google.com/maps/dir//725+N+US+Highway+1,+Fort Pierce,+FL",
+    "hours": "Tuesday & Thursday 1pm - 5pm",
+    "programs": [
+      "baby-item-pantry"
+    ]
+  },
+  {
+    "id": "7354",
+    "name": "Bethel Church of Port St. Lucie",
+    "coordinates": {
+      "lat": 27.363413,
+      "lng": -80.394169
+    },
+    "distance": "",
+    "address": "6173 NW N Torino Pkwy",
+    "city": "Port St. Lucie",
+    "state": "FL",
+    "zip": "34986",
+    "country": "United States",
+    "phone": "305-336-8673",
+    "directionsUrl": "https://www.google.com/maps/dir//6173+NW+N+Torino+Pkwy,+Port St. Lucie,+FL",
+    "hours": "4th Saturday of each month 9am - 11am",
+    "programs": [
+      "pantry"
+    ]
+  },
+  {
+    "id": "7355",
+    "name": "Gifford Beyond Special K",
+    "coordinates": {
+      "lat": 27.6819156,
+      "lng": -80.4304354
+    },
+    "distance": "",
+    "address": "4875 43rd Avenue",
+    "city": "Vero Beach",
+    "state": "FL",
+    "zip": "32967",
+    "country": "United States",
+    "phone": "772-794-1005",
+    "directionsUrl": "https://www.google.com/maps/dir//4875+43rd+Avenue,+Vero Beach,+FL",
+    "hours": "2nd & 4th Wednesday of each month 9am - 10am",
+    "programs": [
+      "pantry"
+    ]
+  },
+  {
+    "id": "7356",
+    "name": "Pathway Church",
+    "coordinates": {
+      "lat": 27.622404,
+      "lng": -80.448718
+    },
+    "distance": "",
+    "address": "1105 58th Avenue",
+    "city": "Vero Beach",
+    "state": "FL",
+    "zip": "32966",
+    "country": "United States",
+    "phone": "772-562-2256",
+    "directionsUrl": "https://www.google.com/maps/dir//1105+58th+Avenue,+Vero Beach,+FL",
+    "hours": "Monday & Thursday 11am \u2013 2pm & Wednesday 4:30pm \u2013 6pm",
+    "programs": [
+      "pantry"
+    ]
+  },
+  {
+    "id": "7357",
+    "name": "Gertrude Walden Child Care Center, Inc.",
+    "coordinates": {
+      "lat": 27.193157,
+      "lng": -80.244044
+    },
+    "distance": "",
+    "address": "601 SE Lake Street",
+    "city": "Stuart",
+    "state": "FL",
+    "zip": "34994",
+    "country": "United States",
+    "phone": "772-283-6321",
+    "directionsUrl": "https://www.google.com/maps/dir//601+SE+Lake+Street,+Stuart,+FL",
+    "hours": "Tuesdays 8am - 11am",
+    "programs": [
+      "pantry"
+    ]
+  },
+  {
+    "id": "7358",
+    "name": "Fairlawn Church - Mama Pat's Kitchen",
+    "coordinates": {
+      "lat": 27.4288497,
+      "lng": -80.3559127
+    },
+    "distance": "",
+    "address": "3003 Rhode Island Avenue",
+    "city": "Fort Pierce",
+    "state": "FL",
+    "zip": "34947",
+    "country": "United States",
+    "phone": "772-461-0814",
+    "directionsUrl": "https://www.google.com/maps/dir//3003+Rhode+Island+Avenue,+Fort Pierce,+FL",
+    "hours": "Wednesdays 6pm - 7pm & Sundays 9:30am - 11am",
+    "programs": [
+      "soup-kitchen"
+    ]
+  },
+  {
+    "id": "7359",
+    "name": "Light of the World Lighthouse Ministries",
+    "coordinates": {
+      "lat": 27.672097,
+      "lng": -80.413364
+    },
+    "distance": "",
+    "address": "4306 28th Avenue",
+    "city": "Vero Beach",
+    "state": "FL",
+    "zip": "32967",
+    "country": "United States",
+    "phone": "772-480-2921",
+    "directionsUrl": "https://www.google.com/maps/dir//4306+28th+Avenue,+Vero Beach,+FL",
+    "hours": "1st & 4th Wednesday 4pm - 6pm",
+    "programs": [
+      "pantry"
+    ]
+  },
+  {
+    "id": "7360",
+    "name": "Reverse the Door, Inc.",
+    "coordinates": {
+      "lat": 27.081114,
+      "lng": -80.147326
+    },
+    "distance": "",
+    "address": "10100 SE Federal Highway",
+    "city": "Hobe Sound",
+    "state": "FL",
+    "zip": "33455",
+    "country": "United States",
+    "phone": "772-485-1279",
+    "directionsUrl": "https://www.google.com/maps/dir//10100+SE+Federal+Highway,+Hobe Sound,+FL",
+    "hours": "1st & 3rd Friday of each month 8am - 10am",
+    "programs": [
+      "pantry"
+    ]
+  },
+  {
+    "id": "7361",
+    "name": "St. John of the Cross",
+    "coordinates": {
+      "lat": 27.6471685,
+      "lng": -80.4806658
+    },
+    "distance": "",
+    "address": "7550 26th Street",
+    "city": "Vero Beach ",
+    "state": "FL",
+    "zip": "32966",
+    "country": "United States",
+    "phone": "NaN",
+    "directionsUrl": "https://www.google.com/maps/dir//7550+26th+Street,+Vero Beach ,+FL",
+    "hours": "Fridays 9am - 11am",
+    "programs": [
+      "pantry"
+    ]
+  },
+  {
+    "id": "7362",
+    "name": "Salvation Army",
+    "coordinates": {
+      "lat": 27.593569,
+      "lng": -80.413511
+    },
+    "distance": "",
+    "address": "2655 5th Street SW",
+    "city": "Vero Beach",
+    "state": "FL",
+    "zip": "32962",
+    "country": "United States",
+    "phone": "772-978-0265",
+    "directionsUrl": "https://www.google.com/maps/dir//2655+5th+Street+SW,+Vero Beach,+FL",
+    "hours": "Tuesday - Thursday 9am - 11am & 1pm - 3pm",
+    "programs": [
+      "pantry"
+    ]
+  },
+  {
+    "id": "7363",
+    "name": "Notre Dame Catholic Mission",
+    "coordinates": {
+      "lat": 27.44865,
+      "lng": -80.3269883
+    },
+    "distance": "",
+    "address": "217 N US Highway 1",
+    "city": "Fort Pierce",
+    "state": "FL",
+    "zip": "34950",
+    "country": "United States",
+    "phone": "772-466-9617",
+    "directionsUrl": "https://www.google.com/maps/dir//217+N+US+Highway+1,+Fort Pierce,+FL",
+    "hours": "Fridays 4:30pm - 6pm",
+    "programs": [
+      "soup-kitchen"
+    ]
+  },
+  {
+    "id": "7364",
+    "name": "St. Mary's Episcopal Church - Mary's Kitchen",
+    "coordinates": {
+      "lat": 27.212313,
+      "lng": -80.180382
+    },
+    "distance": "",
+    "address": "",
+    "city": "Stuart",
+    "state": "FL",
+    "zip": "34996",
+    "country": "United States",
+    "phone": "772-287-3244",
+    "directionsUrl": "https://www.google.com/maps/dir//,+Stuart,+FL",
+    "hours": "Wednesdays 4pm - 6pm",
+    "programs": []
+  },
+  {
+    "id": "7365",
+    "name": "Midport Seventh-Day Adventist Church",
+    "coordinates": {
+      "lat": 27.2926143,
+      "lng": -80.306792
+    },
+    "distance": "",
+    "address": "1800 SE Veterans Memorial Pkwy",
+    "city": "Port St. Lucie",
+    "state": "FL",
+    "zip": "34952",
+    "country": "United States",
+    "phone": "772-398-3225",
+    "directionsUrl": "https://www.google.com/maps/dir//1800+SE+Veterans+Memorial+Pkwy,+Port St. Lucie,+FL",
+    "hours": "2nd & 4th Tuesday of each month 3pm \u2013 6:30pm",
+    "programs": [
+      "pantry"
+    ]
+  },
+  {
+    "id": "7366",
+    "name": "Department of Human Services (Wabasso)",
+    "coordinates": {
+      "lat": 27.747438,
+      "lng": -80.458352
+    },
+    "distance": "",
+    "address": "8445 64th Avenue",
+    "city": "Wabasso",
+    "state": "FL",
+    "zip": "32970",
+    "country": "United States",
+    "phone": "772-794-7480",
+    "directionsUrl": "https://www.google.com/maps/dir//8445+64th+Avenue,+Wabasso,+FL",
+    "hours": "Monday - Friday 8:30am - 4:30pm",
+    "programs": [
+      "pantry"
+    ]
+  },
+  {
+    "id": "7367",
+    "name": "Sarah's Kitchen - Lakewood Park United Methodist Church",
+    "coordinates": {
+      "lat": 27.5332817,
+      "lng": -80.3898362
+    },
+    "distance": "",
+    "address": "5405 Turnpike Feeder Road",
+    "city": "Fort Pierce",
+    "state": "FL",
+    "zip": "34951",
+    "country": "United States",
+    "phone": "772-834-2818",
+    "directionsUrl": "https://www.google.com/maps/dir//5405+Turnpike+Feeder+Road,+Fort Pierce,+FL",
+    "hours": "Soup Kitchen: Tuesday 4:30pm - 6pm",
+    "programs": [
+      "soup-kitchen"
+    ]
+  },
+  {
+    "id": "7368",
+    "name": "The Overflow Church",
+    "coordinates": {
+      "lat": 27.586466,
+      "lng": -80.391486
+    },
+    "distance": "",
+    "address": "925 9th Street SW",
+    "city": "Vero Beach",
+    "state": "FL",
+    "zip": "32962",
+    "country": "United States",
+    "phone": "NaN",
+    "directionsUrl": "https://www.google.com/maps/dir//925+9th+Street+SW,+Vero Beach,+FL",
+    "hours": "Thursdays 2pm - 4pm",
+    "programs": [
+      "pantry"
+    ]
+  },
+  {
+    "id": "7369",
+    "name": "One Lord One Faith Christian Ministries",
+    "coordinates": {
+      "lat": 27.466142,
+      "lng": -80.346315
+    },
+    "distance": "",
+    "address": "2102 Avenue Q",
+    "city": "Fort Pierce",
+    "state": "FL",
+    "zip": "34950",
+    "country": "United States",
+    "phone": "NaN",
+    "directionsUrl": "https://www.google.com/maps/dir//2102+Avenue+Q,+Fort Pierce,+FL",
+    "hours": "Thursdays 2:30pm - 4:30pm",
+    "programs": [
+      "pantry"
+    ]
+  },
+  {
+    "id": "7370",
+    "name": "Healthy Start Coalition of St. Lucie County",
+    "coordinates": {
+      "lat": 27.43354,
+      "lng": -80.34805
+    },
+    "distance": "",
+    "address": "2310 Nebraska Avenue",
+    "city": "Fort Pierce",
+    "state": "FL",
+    "zip": "34950",
+    "country": "United States",
+    "phone": "7728282749",
+    "directionsUrl": "https://www.google.com/maps/dir//2310+Nebraska+Avenue,+Fort Pierce,+FL",
+    "hours": "Monday - Saturday 9am - 5pm",
+    "programs": [
+      "baby-item-pantry"
+    ]
+  }
+]
