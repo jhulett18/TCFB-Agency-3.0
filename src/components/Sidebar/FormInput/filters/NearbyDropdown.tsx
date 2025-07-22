@@ -1,5 +1,5 @@
 import { Menu, MenuItem, MenuButton } from "@szhsin/react-menu";
-import { useFilters } from "../../../../store/useFilters";
+import { useLocationStore } from "../../../../store/locationStore";
 
 const distanceOptions = [
   { label: "Within 5 miles", value: "5" },
@@ -9,11 +9,10 @@ const distanceOptions = [
 ];
 
 export default function NearbyDropdown() {
-  const { distances, setDistances } = useFilters();
+  const { nearbyDistance, setNearbyDistance, userLocation } = useLocationStore();
 
-  const selectedLabels = distanceOptions
-    .filter((opt) => distances.includes(opt.value))
-    .map((opt) => opt.label);
+  const selectedLabel = distanceOptions.find(opt => opt.value === nearbyDistance)?.label;
+  const isDisabled = !userLocation;
 
   return (
     <div className="dropdown-wrapper">
@@ -26,27 +25,49 @@ export default function NearbyDropdown() {
 
       <Menu
         menuButton={
-          <MenuButton className="dropdown-button">
-            {selectedLabels.length > 0
-              ? selectedLabels.join(", ")
-              : "All Options"}
+          <MenuButton 
+            className="dropdown-button" 
+            disabled={isDisabled}
+            style={{
+              opacity: isDisabled ? 0.5 : 1,
+              cursor: isDisabled ? 'not-allowed' : 'pointer'
+            }}
+          >
+            {isDisabled ? "Search for location first" : (selectedLabel || "All Options")}
           </MenuButton>
         }
         transition
       >
+        <MenuItem
+          key="clear"
+          className="dropdown-item"
+          onClick={() => setNearbyDistance(null)}
+        >
+          <label
+            style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}
+          >
+            <input
+              type="radio"
+              checked={nearbyDistance === null}
+              onChange={() => setNearbyDistance(null)}
+              onClick={(e) => e.stopPropagation()}
+            />
+            All Options
+          </label>
+        </MenuItem>
         {distanceOptions.map((opt) => (
           <MenuItem
             key={opt.value}
             className="dropdown-item"
-            onClick={() => setDistances([opt.value])}
+            onClick={() => setNearbyDistance(opt.value)}
           >
             <label
               style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}
             >
               <input
-                type="checkbox"
-                checked={distances.includes(opt.value)}
-                onChange={() => setDistances([opt.value])}
+                type="radio"
+                checked={nearbyDistance === opt.value}
+                onChange={() => setNearbyDistance(opt.value)}
                 onClick={(e) => e.stopPropagation()} // Prevent dropdown from closing
               />
               {opt.label}

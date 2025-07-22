@@ -1,14 +1,12 @@
 import { useState } from "react";
 import styles from "./LocationSearchBox.module.css";
 import { useLocationStore } from "../../../store/locationStore";
-import { useFilters } from "../../../store/useFilters";
 
-const ZIP_REGEX = /^\d{5}(-\d{4})?$/;
 
 export default function LocationSearchBox() {
   const [searchValue, setSearchValue] = useState("");
   const { 
-    searchQuery, 
+    searchQuery,
     isLoading, 
     searchAndFilter, 
     setUserLocation,
@@ -17,19 +15,13 @@ export default function LocationSearchBox() {
     isFallbackSearch,
     originalSearchQuery,
     expandSearchRadius,
-    isOutOfState
+    isOutOfState,
+    nearbyDistance
   } = useLocationStore();
-  const { distances } = useFilters();
 
   // Calculate effective radius based on filters
   const getEffectiveRadius = () => {
-    let effectiveRadius = currentSearchRadius;
-    if (distances && distances.length > 0) {
-      const filterRadius = parseInt(distances[0], 10);
-      // Allow filter to expand the radius beyond the original search radius
-      effectiveRadius = filterRadius;
-    }
-    return effectiveRadius;
+    return nearbyDistance ? parseInt(nearbyDistance, 10) : currentSearchRadius;
   };
 
   const handleSearch = async () => {
@@ -128,6 +120,10 @@ export default function LocationSearchBox() {
             type="button"
             onClick={handleSearch}
             disabled={isLoading}
+            style={{
+              opacity: isLoading ? 0.6 : 1,
+              cursor: isLoading ? 'not-allowed' : 'pointer'
+            }}
           >
             <span>
               <span className={styles.searchButtonLabel}>

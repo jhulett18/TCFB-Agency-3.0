@@ -5,6 +5,7 @@ import agenciesFallback from "../data/agencies.json";
 type Location = { lat: number; lng: number } | null;
 
 type LocationStore = {
+  // Location and search
   userLocation: Location;
   searchQuery: string;
   defaultRadius: number;
@@ -16,15 +17,30 @@ type LocationStore = {
   isOutOfState: boolean;
   allAgencies: any[];
   agenciesLoaded: boolean;
+  
+  // Filters
+  foodTypes: string[];
+  nearbyDistance: string | null;
+  daysOfWeek: string[];
+  
+  // Actions
   setUserLocation: (location: Location) => void;
   setSearchQuery: (query: string) => void;
   setDefaultRadius: (radius: number) => void;
   searchAndFilter: (query: string, radius?: number) => Promise<void>;
-  filterAgencies: (filters?: { radius?: number; foodTypes?: string[]; daysOfWeek?: string[] }) => void;
+  filterAgencies: () => void;
   clearSearch: () => void;
   initializeFallback: () => void;
   expandSearchRadius: () => void;
   fetchAgencies: () => Promise<void>;
+  
+  // Filter actions
+  toggleFoodType: (type: string) => void;
+  setFoodTypes: (types: string[]) => void;
+  setNearbyDistance: (distance: string | null) => void;
+  toggleDayOfWeek: (day: string) => void;
+  setDaysOfWeek: (days: string[]) => void;
+  clearFilters: () => void;
 };
 
 // Helper to check if agency is open on any selected day
@@ -43,6 +59,7 @@ export function isInFlorida(lat: number, lng: number): boolean {
 }
 
 export const useLocationStore = create<LocationStore>((set, get) => ({
+  // Location and search state
   userLocation: null,
   searchQuery: "",
   defaultRadius: 15,
@@ -55,9 +72,19 @@ export const useLocationStore = create<LocationStore>((set, get) => ({
   allAgencies: [],
   agenciesLoaded: false,
 
-  setUserLocation: (location) => set({ userLocation: location }),
+  // Filter state
+  foodTypes: [],
+  nearbyDistance: null,
+  daysOfWeek: [],
+
+  // Basic setters
+  setUserLocation: (location) => {
+    set({ userLocation: location });
+    get().filterAgencies(); // Refilter when location changes
+  },
 
   setSearchQuery: (query) => set({ searchQuery: query }),
+
 
   setDefaultRadius: (radius) => set({ defaultRadius: radius }),
 
@@ -86,7 +113,7 @@ export const useLocationStore = create<LocationStore>((set, get) => ({
       }
     } catch (e) {
       set({ allAgencies: agenciesFallback, agenciesLoaded: true });
-      get().filterAgencies(); // Update filteredAgencies after loading fallback data
+      get().filterAgencies(); // Update filteredAgencies after loading fallback data  
       console.log("[TCFB] Agencies loaded from static fallback data.");
       console.log("First 3 agencies:", agenciesFallback.slice(0, 3));
       console.error("Error in fetchAgencies:", e);
@@ -101,7 +128,55 @@ export const useLocationStore = create<LocationStore>((set, get) => ({
     set({ filteredAgencies: fallbackAgencies });
   },
 
+  // Filter actions
+  toggleFoodType: (type) => {
+    set((state) => ({
+      foodTypes: state.foodTypes.includes(type)
+        ? state.foodTypes.filter((t) => t !== type)
+        : [...state.foodTypes, type],
+    }));
+    get().filterAgencies(); // Refilter after change
+  },
+
+  setFoodTypes: (types) => {
+    set({ foodTypes: types });
+    get().filterAgencies(); // Refilter after change
+  },
+
+  setNearbyDistance: (distance) => {
+    set({ nearbyDistance: distance });
+    get().filterAgencies(); // Refilter after change
+  },
+
+  toggleDayOfWeek: (day) => {
+    set((state) => ({
+      daysOfWeek: state.daysOfWeek.includes(day)
+        ? state.daysOfWeek.filter((d) => d !== day)
+        : [...state.daysOfWeek, day],
+    }));
+    get().filterAgencies(); // Refilter after change
+  },
+
+  setDaysOfWeek: (days) => {
+    set({ daysOfWeek: days });
+    get().filterAgencies(); // Refilter after change
+  },
+
+  clearFilters: () => {
+    set({ 
+      foodTypes: [], 
+      nearbyDistance: null, 
+      daysOfWeek: [] 
+    });
+    get().filterAgencies(); // Refilter after clearing
+  },
+
   searchAndFilter: async (query, radius = 15) => {
+    if (!query || query.trim() === "") {
+      alert("Please enter a location to search.");
+      return;
+    }
+
     set({ 
       isLoading: true, 
       searchQuery: query,
@@ -139,7 +214,7 @@ export const useLocationStore = create<LocationStore>((set, get) => ({
         }
         
         set({ userLocation });
-        get().filterAgencies({ radius });
+        get().filterAgencies();
       } else {
         set({ 
           isLoading: false,
@@ -155,22 +230,57 @@ export const useLocationStore = create<LocationStore>((set, get) => ({
     }
   },
 
-  filterAgencies: (filters = {}) => {
-    const { userLocation } = get();
-    const { radius = 15, foodTypes = [], daysOfWeek = [] } = filters;
-    const agencies = get().allAgencies;
+  filterAgencies: () => {
+    const state = get();
+    const { 
+      userLocation, 
+      allAgencies, 
+      foodTypes, 
+      nearbyDistance, 
+      daysOfWeek,
+      currentSearchRadius
+    } = state;
     
     if (!userLocation) {
-      // Fallback: Show all agencies when no location is set
-      const fallbackAgencies = agencies.map((agency: any) => ({
+      // No location set - apply filters to all agencies
+      let filtered = allAgencies.filter((agency: any) => {
+        // Apply food type filter (multi-select)
+        if (foodTypes.length > 0) {
+          const hasMatchingProgram = foodTypes.some(type => {
+            // Map filter values to agency program values
+            const programMap: { [key: string]: string } = {
+              'pantry': 'Pantry',
+              'soup-kitchen': 'Soup Kitchen',
+              'baby-item-pantry': 'Baby Item Pantry'
+            };
+            const programName = programMap[type] || type;
+            return agency.programs?.includes(programName);
+          });
+          if (!hasMatchingProgram) return false;
+        }
+
+        // Apply days of week filter (multi-select)
+        if (daysOfWeek.length > 0 && !agencyIsOpenOnDay(agency, daysOfWeek)) {
+          return false;
+        }
+
+        return true;
+      });
+
+      // Add null distance for agencies without location
+      const filteredWithDistance = filtered.map((agency: any) => ({
         ...agency,
         distance: null,
       }));
-      set({ filteredAgencies: fallbackAgencies });
+      
+      set({ filteredAgencies: filteredWithDistance });
       return;
     }
 
-    let filtered = agencies.filter((agency: any) => {
+    // Use nearbyDistance filter if set, otherwise use currentSearchRadius
+    const effectiveRadius = nearbyDistance ? parseInt(nearbyDistance, 10) : currentSearchRadius;
+
+    let filtered = allAgencies.filter((agency: any) => {
       if (!agency.coordinates) return false;
 
       const distance = getDistanceInMiles(
@@ -180,15 +290,25 @@ export const useLocationStore = create<LocationStore>((set, get) => ({
         agency.coordinates.lng
       );
 
-      if (distance > radius) return false;
+      // Apply distance filter
+      if (distance > effectiveRadius) return false;
 
+      // Apply food type filter (multi-select)
       if (foodTypes.length > 0) {
-        const hasMatchingProgram = foodTypes.some(type => 
-          agency.programs?.includes(type)
-        );
+        const hasMatchingProgram = foodTypes.some(type => {
+          // Map filter values to agency program values
+          const programMap: { [key: string]: string } = {
+            'pantry': 'Pantry',
+            'soup-kitchen': 'Soup Kitchen',
+            'baby-item-pantry': 'Baby Item Pantry'
+          };
+          const programName = programMap[type] || type;
+          return agency.programs?.includes(programName);
+        });
         if (!hasMatchingProgram) return false;
       }
 
+      // Apply days of week filter (multi-select)
       if (daysOfWeek.length > 0 && !agencyIsOpenOnDay(agency, daysOfWeek)) {
         return false;
       }
@@ -196,6 +316,7 @@ export const useLocationStore = create<LocationStore>((set, get) => ({
       return true;
     });
 
+    // Add distances and sort
     filtered = filtered.map((agency: any) => ({
       ...agency,
       distance: parseFloat(getDistanceInMiles(
@@ -208,12 +329,10 @@ export const useLocationStore = create<LocationStore>((set, get) => ({
 
     filtered.sort((a: any, b: any) => (a.distance || 0) - (b.distance || 0));
 
-    const state = get();
-    
     // Check if we need fallback search
     if (filtered.length === 0 && !state.isFallbackSearch && state.originalSearchQuery) {
       // No agencies found in initial radius, try expanding search
-      const expandedRadius = Math.min(radius * 2, 50); // Double radius, max 50 miles
+      const expandedRadius = Math.min(effectiveRadius * 2, 50); // Double radius, max 50 miles
       set({ 
         currentSearchRadius: expandedRadius,
         isFallbackSearch: true,
@@ -222,11 +341,7 @@ export const useLocationStore = create<LocationStore>((set, get) => ({
       
       // Recursively call with expanded radius
       setTimeout(() => {
-        get().filterAgencies({ 
-          radius: expandedRadius, 
-          foodTypes, 
-          daysOfWeek 
-        });
+        get().filterAgencies();
         set({ isLoading: false });
       }, 100);
     } else {
@@ -248,11 +363,7 @@ export const useLocationStore = create<LocationStore>((set, get) => ({
     });
     
     setTimeout(() => {
-      get().filterAgencies({ 
-        radius: newRadius,
-        foodTypes: [],
-        daysOfWeek: []
-      });
+      get().filterAgencies();
     }, 100);
   },
 
@@ -265,7 +376,11 @@ export const useLocationStore = create<LocationStore>((set, get) => ({
       currentSearchRadius: 15,
       isFallbackSearch: false,
       originalSearchQuery: "",
-      isOutOfState: false
+      isOutOfState: false,
+      // Clear filters too
+      foodTypes: [],
+      nearbyDistance: null,
+      daysOfWeek: []
     });
     // Initialize fallback agencies after clearing
     setTimeout(() => get().initializeFallback(), 100);

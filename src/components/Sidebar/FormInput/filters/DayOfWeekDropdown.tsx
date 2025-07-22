@@ -1,5 +1,5 @@
 import { Menu, MenuItem, MenuButton } from "@szhsin/react-menu";
-import { useFilters } from "../../../../store/useFilters";
+import { useLocationStore } from "../../../../store/locationStore";
 
 const days = [
   { label: "Monday", value: "monday" },
@@ -12,7 +12,7 @@ const days = [
 ];
 
 export default function DayOfWeekDropdown() {
-  const { daysOfWeek, toggleDayOfWeek } = useFilters();
+  const { daysOfWeek, toggleDayOfWeek } = useLocationStore();
 
   const selectedLabels = days
     .filter((opt) => daysOfWeek.includes(opt.value))

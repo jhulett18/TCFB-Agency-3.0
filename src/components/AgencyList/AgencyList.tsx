@@ -3,7 +3,6 @@ import AgencyCard from "./AgencyCard";
 import agencyData from "../../data/agencies.json";
 import { useSelectedAgencyStore } from "../../store/useSelectedAgecy";
 import { useLocationStore } from "../../store/locationStore";
-import { useFilters } from "../../store/useFilters";
 import "./AgencyList.css";
 
 const BATCH_SIZE = 10;
@@ -12,20 +11,22 @@ export default function AgencyList() {
   const [visibleCount, setVisibleCount] = useState(BATCH_SIZE);
   const selectedId = useSelectedAgencyStore((state) => state.selectedId);
   const setSelectedId = useSelectedAgencyStore((state) => state.setSelectedId);
-  const { filteredAgencies, searchQuery, initializeFallback } = useLocationStore();
-  const { distances, daysOfWeek } = useFilters();
+  const { filteredAgencies, searchQuery, initializeFallback, nearbyDistance, daysOfWeek, foodTypes } = useLocationStore();
   const cardRefs = useRef<{ [id: string]: HTMLLIElement | null }>({});
 
-  // Use filtered agencies if available, otherwise use fallback from agencyData
-  const agenciesToShow = filteredAgencies.length > 0 ? filteredAgencies : agencyData.slice(0, 8);
+  // Show results header if any filter is active or searchQuery is set
+  const filtersActive = searchQuery || nearbyDistance || daysOfWeek.length > 0 || foodTypes.length > 0;
+  
+  // Use filtered agencies if available, otherwise use fallback from agencyData only when no filters are active
+  const agenciesToShow = filtersActive ? filteredAgencies : (filteredAgencies.length > 0 ? filteredAgencies : agencyData.slice(0, 8));
   const visibleAgencies = agenciesToShow.slice(0, visibleCount);
 
-  // Initialize fallback agencies on component mount
+  // Initialize fallback agencies on component mount only when no filters are active
   useEffect(() => {
-    if (filteredAgencies.length === 0) {
+    if (filteredAgencies.length === 0 && !filtersActive) {
       initializeFallback();
     }
-  }, [filteredAgencies.length, initializeFallback]);
+  }, [filteredAgencies.length, initializeFallback, filtersActive]);
 
   useEffect(() => {
     if (selectedId && cardRefs.current[selectedId]) {
@@ -42,16 +43,19 @@ export default function AgencyList() {
   useEffect(() => {
     setVisibleCount(BATCH_SIZE);
   }, [searchQuery]);
-
-  // Show results header if any filter is active or searchQuery is set
-  const filtersActive = searchQuery || distances.length > 0 || daysOfWeek.length > 0;
   const showNoResults = filtersActive && filteredAgencies.length === 0;
   let noResultsMsg = "No agencies found for your search.";
   if (showNoResults) {
-    if (distances.length > 0 && daysOfWeek.length > 0) {
+    if (foodTypes.length > 0 && daysOfWeek.length > 0) {
+      noResultsMsg =
+        "No agencies found for the selected food types and days. Try selecting different food types or more days.";
+    } else if (foodTypes.length > 0) {
+      noResultsMsg =
+        "No agencies found for the selected food types. Try selecting different food types.";
+    } else if (nearbyDistance && daysOfWeek.length > 0) {
       noResultsMsg =
         "No agencies found for the selected distance and days. Try broadening your distance or selecting more days.";
-    } else if (distances.length > 0) {
+    } else if (nearbyDistance) {
       noResultsMsg =
         "No agencies found for the selected distance. Try increasing your distance filter for more results.";
     } else if (daysOfWeek.length > 0) {

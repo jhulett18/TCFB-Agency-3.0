@@ -1,5 +1,5 @@
 import { Menu, MenuItem, MenuButton } from "@szhsin/react-menu";
-import { useFilters } from "../../../../store/useFilters";
+import { useLocationStore } from "../../../../store/locationStore";
 
 const options = [
   { label: "Food Pantry", value: "pantry" },
@@ -8,7 +8,7 @@ const options = [
 ];
 
 export default function FoodTypeDropdown() {
-  const { foodTypes, setFoodTypes } = useFilters();
+  const { foodTypes, toggleFoodType } = useLocationStore();
 
   const selectedLabels = options
     .filter((opt) => foodTypes.includes(opt.value))
@@ -37,7 +37,7 @@ export default function FoodTypeDropdown() {
           <MenuItem
             key={opt.value}
             className="dropdown-item"
-            onClick={() => setFoodTypes([opt.value])}
+            onClick={() => null}
           >
             <label
               style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}
@@ -45,7 +45,7 @@ export default function FoodTypeDropdown() {
               <input
                 type="checkbox"
                 checked={foodTypes.includes(opt.value)}
-                onChange={() => setFoodTypes([opt.value])}
+                onChange={() => toggleFoodType(opt.value)}
                 onClick={(e) => e.stopPropagation()} // ✅ prevents dropdown from closing
               />
               {opt.label}

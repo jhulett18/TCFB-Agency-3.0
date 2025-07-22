@@ -9,7 +9,6 @@ import "./InteractiveMap.css";
 import pantryIcon from "../../assets/icons/pantry.png";
 import soupKitchenIcon from "../../assets/icons/soup-kitchen.png";
 import babyItemPantryIcon from "../../assets/icons/baby-item-pantry.png";
-import petsIcon from "../../assets/icons/pets.png";
 
 const center = { lat: 27.435, lng: -80.35 };
 const zoom = 12;
@@ -25,8 +24,7 @@ function MapComponent({ agencies }: { agencies: any[] }) {
 
   const selectedId = useSelectedAgencyStore((state) => state.selectedId);
   const { setSelectedId } = useSelectedAgencyStore();
-  const { userLocation, currentSearchRadius, filteredAgencies } = useLocationStore();
-  const { distances } = require("../../store/useFilters").useFilters();
+  const { userLocation, currentSearchRadius, filteredAgencies, nearbyDistance } = useLocationStore();
 
   // Initialize map only once
   useEffect(() => {
@@ -62,12 +60,7 @@ function MapComponent({ agencies }: { agencies: any[] }) {
       radiusCircleRef.current.setMap(null);
     }
     // Calculate effective radius based on filter
-    let effectiveRadius = currentSearchRadius;
-    if (distances && distances.length > 0) {
-      // Only one can be selected, so use the first
-      const filterRadius = parseInt(distances[0], 10);
-      effectiveRadius = Math.min(currentSearchRadius, filterRadius);
-    }
+    let effectiveRadius = nearbyDistance ? parseInt(nearbyDistance, 10) : currentSearchRadius;
     // Create new radius circle
     const circle = new google.maps.Circle({
       strokeColor: "#4285F4", // Light blue
@@ -80,7 +73,7 @@ function MapComponent({ agencies }: { agencies: any[] }) {
       radius: effectiveRadius * 1609.34, // Convert miles to meters
     });
     radiusCircleRef.current = circle;
-  }, [userLocation, currentSearchRadius, distances]);
+  }, [userLocation, currentSearchRadius, nearbyDistance]);
 
   // Update markers when agencies change
   useEffect(() => {

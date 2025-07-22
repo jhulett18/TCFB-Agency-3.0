@@ -79,7 +79,7 @@ export default function App() {
         <div
           className={`map-responsive ${isMobile && !showMapMobile ? "hidden-mobile" : ""}`}
         >
-          <MapComponent agencies={allAgencies} />
+          <MapComponent agencies={filteredAgencies.length > 0 ? filteredAgencies : allAgencies} />
         </div>
       </div>
     </div>
