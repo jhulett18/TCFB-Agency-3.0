@@ -101,3 +101,19 @@ video {
 *::after {
   box-sizing: border-box;
 }
+
+.marker-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 2px solid white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+ 
+ img.marker-icon.selected {
+  transform: scale(1.8) !important;
+  filter: drop-shadow(0 0 6px rgba(0, 0, 0, 0.5)) !important;
+  border-color: #1976d2 !important;
+  box-shadow: 0 0 0 3px rgba(25, 118, 210, 0.3) !important;
+}

@@ -104,7 +104,10 @@ export default function AgencyList() {
             className={`agency-card ${
               selectedId === agency.id ? "active" : ""
             }`}
-            onClick={() => setSelectedId(agency.id)}
+            onClick={() => {
+              console.log("Agency card clicked, setting selectedId to:", agency.id);
+              setSelectedId(agency.id);
+            }}
           >
             <AgencyCard agency={agency} />
           </li>

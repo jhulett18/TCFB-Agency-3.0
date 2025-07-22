@@ -1,5 +1,22 @@
 import React from "react";
 import "./AgencyCard.css";
+import Image from '../Image/Image';
+import pantryIcon from '../../assets/icons/pantry.png';
+import soupKitchenIcon from '../../assets/icons/soup-kitchen.png';
+import babyItemPantryIcon from '../../assets/icons/baby-item-pantry.png';
+import petsIcon from '../../assets/icons/pets.png';
+// Add more imports as needed
+
+const getIcon = (agency: any): string => {
+  if (agency.programs && agency.programs.length > 0) {
+    if (agency.programs.includes("soup-kitchen")) return soupKitchenIcon;
+    if (agency.programs.includes("baby-item-pantry")) return babyItemPantryIcon;
+    if (agency.programs.includes("pets")) return petsIcon;
+    if (agency.programs.includes("pantry")) return pantryIcon;
+    // Add more program types as needed
+  }
+  return pantryIcon; // Default to pantry icon
+};
 
 type Agency = {
   id: string;
@@ -73,11 +90,18 @@ const AgencyCard: React.FC<Props> = ({ agency, onViewOnMap }) => {
         <div className="agency-card__section agency-card__programs">
           <h5 className="agency-card__label">Programs:</h5>
           <ul className="agency-card__program-list">
-            {agency.programs.map((program, index) => (
-              <li key={index} className="agency-card__program-item">
-                {program.replace(/-/g, " ")}
-              </li>
-            ))}
+            <li className="agency-card__program-item">
+              <Image
+                src={getIcon(agency)}
+                alt={agency.programs.join(", ")}
+                width={24}
+                height={24}
+                className="agency-card__program-icon"
+              />
+              {agency.programs.map((program, index) => (
+                <span key={index}>{program.replace(/-/g, " ")}{index < agency.programs.length - 1 ? ', ' : ''}</span>
+              ))}
+            </li>
           </ul>
         </div>
       </div>

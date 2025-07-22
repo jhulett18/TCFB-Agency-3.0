@@ -97,22 +97,20 @@ function MapComponent({ agencies }: { agencies: any[] }) {
     agencies.forEach((agency) => {
       if (!agency.coordinates) return;
       const iconPath = getIcon(agency);
-      // Create marker DOM
-      const markerEl = document.createElement("div");
-      markerEl.className = "custom-marker";
-      markerEl.innerHTML = `
-        <img 
-          src="${iconPath}" 
-          class="marker-icon" 
-          alt="${agency.name}"
-          style="width: 32px; height: 32px;"
-        />
-      `;
+      // Create marker DOM using an <img> element as per Google Maps reference
+      const markerImg = document.createElement('img');
+      markerImg.src = iconPath;
+      markerImg.className = 'marker-icon';
+      markerImg.alt = agency.name;
+      markerImg.style.width = '32px';
+      markerImg.style.height = '32px';
+      // Remove other inline styles to allow CSS animation
+
       const marker = new google.maps.marker.AdvancedMarkerElement({
         map,
         position: agency.coordinates,
         title: agency.name,
-        content: markerEl,
+        content: markerImg,
       });
       markerRefs.current[agency.id] = marker;
       marker.addListener("click", () => {
@@ -135,9 +133,16 @@ function MapComponent({ agencies }: { agencies: any[] }) {
   // Update marker appearance on selection
   useEffect(() => {
     Object.entries(markerRefs.current).forEach(([id, marker]) => {
-      (marker.content as HTMLElement)?.classList.toggle("selected-marker", id === selectedId);
+      const img = marker.content as HTMLImageElement;
+      if (img) {
+        if (String(id) === String(selectedId)) {
+          img.classList.add("selected");
+        } else {
+          img.classList.remove("selected");
+        }
+      }
     });
-  }, [selectedId]);
+  }, [selectedId, agencies]);
 
   return (
     <div
@@ -157,11 +162,11 @@ function MapComponent({ agencies }: { agencies: any[] }) {
 // Helper function to get icon based on agency programs
 const getIcon = (agency: any): string => {
   if (agency.programs && agency.programs.length > 0) {
-    if (agency.programs.includes("soup-kitchen")) {
+    if (agency.programs.includes("Soup Kitchen")) {
       return soupKitchenIcon;
-    } else if (agency.programs.includes("baby-item-pantry")) {
+    } else if (agency.programs.includes("Baby Item Pantry")) {
       return babyItemPantryIcon;
-    } else if (agency.programs.includes("pantry")) {
+    } else if (agency.programs.includes("Pantry")) {
       return pantryIcon;
     }
   }

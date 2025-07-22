@@ -37,9 +37,8 @@ export default function Image({
       return imageSrc;
     }
     
-    // For relative paths, prepend the correct base path
-    const basePath = process.env.NODE_ENV === 'production' ? '/agency' : '';
-    return `${basePath}/${imageSrc}`;
+    // For relative paths, just return as is
+    return imageSrc;
   };
 
   const resolvedSrc = resolvePath(src);

@@ -1,6 +1,6 @@
 import { create } from "zustand";
 import { getDistanceInMiles } from "../utils/distance";
-import agencies from "../data/agencies.json";
+import agenciesFallback from "../data/agencies.json";
 
 type Location = { lat: number; lng: number } | null;
 
@@ -14,6 +14,8 @@ type LocationStore = {
   isFallbackSearch: boolean;
   originalSearchQuery: string;
   isOutOfState: boolean;
+  allAgencies: any[];
+  agenciesLoaded: boolean;
   setUserLocation: (location: Location) => void;
   setSearchQuery: (query: string) => void;
   setDefaultRadius: (radius: number) => void;
@@ -22,6 +24,7 @@ type LocationStore = {
   clearSearch: () => void;
   initializeFallback: () => void;
   expandSearchRadius: () => void;
+  fetchAgencies: () => Promise<void>;
 };
 
 // Helper to check if agency is open on any selected day
@@ -49,6 +52,8 @@ export const useLocationStore = create<LocationStore>((set, get) => ({
   isFallbackSearch: false,
   originalSearchQuery: "",
   isOutOfState: false,
+  allAgencies: [],
+  agenciesLoaded: false,
 
   setUserLocation: (location) => set({ userLocation: location }),
 
@@ -56,8 +61,40 @@ export const useLocationStore = create<LocationStore>((set, get) => ({
 
   setDefaultRadius: (radius) => set({ defaultRadius: radius }),
 
+  fetchAgencies: async () => {
+    if (get().agenciesLoaded) return;
+    try {
+      const res = await fetch("https://tcfb-lambda-git-main-wavvsofficial-4880s-projects.vercel.app/api/my-endpoint", {
+        method: 'GET',
+        headers: { 'Content-Type': 'application/json' },
+      });
+      if (!res.ok) throw new Error("Failed to fetch agencies");
+      const data = await res.json();
+      let agenciesArray = null;
+      if (Array.isArray(data)) {
+        agenciesArray = data;
+      } else if (Array.isArray(data.agencies)) {
+        agenciesArray = data.agencies;
+      }
+      if (agenciesArray) {
+        set({ allAgencies: agenciesArray, agenciesLoaded: true });
+        get().filterAgencies(); // Update filteredAgencies after fetching new data
+        console.log("[TCFB] Agencies loaded from endpoint.");
+        console.log("First 3 agencies:", agenciesArray.slice(0, 3));
+      } else {
+        throw new Error("API did not return an array: " + JSON.stringify(data));
+      }
+    } catch (e) {
+      set({ allAgencies: agenciesFallback, agenciesLoaded: true });
+      get().filterAgencies(); // Update filteredAgencies after loading fallback data
+      console.log("[TCFB] Agencies loaded from static fallback data.");
+      console.log("First 3 agencies:", agenciesFallback.slice(0, 3));
+      console.error("Error in fetchAgencies:", e);
+    }
+  },
+
   initializeFallback: () => {
-    const fallbackAgencies = agencies.map((agency: any) => ({
+    const fallbackAgencies = get().allAgencies.map((agency: any) => ({
       ...agency,
       distance: null,
     }));
@@ -121,6 +158,7 @@ export const useLocationStore = create<LocationStore>((set, get) => ({
   filterAgencies: (filters = {}) => {
     const { userLocation } = get();
     const { radius = 15, foodTypes = [], daysOfWeek = [] } = filters;
+    const agencies = get().allAgencies;
     
     if (!userLocation) {
       // Fallback: Show all agencies when no location is set

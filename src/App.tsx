@@ -10,7 +10,19 @@ export default function App() {
   // Mobile view toggle: false = list, true = map
   const [showMapMobile, setShowMapMobile] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 750);
-  const { filteredAgencies } = useLocationStore();
+  const { filteredAgencies, fetchAgencies, allAgencies } = useLocationStore();
+
+  // Removed filteredAgencies log
+
+  // Fetch agencies on app load and poll every 30 minutes
+  useEffect(() => {
+    fetchAgencies();
+    const intervalId = setInterval(() => {
+      fetchAgencies();
+    }, 1800000); // 30 minutes
+    return () => clearInterval(intervalId);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   // Update isMobile on resize
   useEffect(() => {
@@ -67,7 +79,7 @@ export default function App() {
         <div
           className={`map-responsive ${isMobile && !showMapMobile ? "hidden-mobile" : ""}`}
         >
-          <MapComponent agencies={filteredAgencies} />
+          <MapComponent agencies={allAgencies} />
         </div>
       </div>
     </div>
