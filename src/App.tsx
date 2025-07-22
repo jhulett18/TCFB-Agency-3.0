@@ -1,16 +1,18 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import MapComponent from "./components/InteractiveMap/InteractiveMap"; // adjust path if needed
 import "./global.css";
 import LeftSidebar from "./components/Sidebar/Sidebar";
 import Navbar from "./components/Navbar/Navbar";
 import "./AppResponsive.css"; // for responsive styles
 import { useLocationStore } from "./store/locationStore";
+import SplashPage from "./components/SplashPage/SplashPage";
 
 export default function App() {
   // Mobile view toggle: false = list, true = map
   const [showMapMobile, setShowMapMobile] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 750);
-  const { filteredAgencies, fetchAgencies, allAgencies } = useLocationStore();
+  const [splashComplete, setSplashComplete] = useState(false);
+  const { filteredAgencies, fetchAgencies, allAgencies, agenciesLoaded, isLoading } = useLocationStore();
 
   // Removed filteredAgencies log
 
@@ -23,6 +25,16 @@ export default function App() {
     return () => clearInterval(intervalId);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  // Show splash for minimum 3 seconds after data loads
+  useEffect(() => {
+    if (agenciesLoaded && !isLoading) {
+      const timer = setTimeout(() => {
+        setSplashComplete(true);
+      }, 3000); // 3 second delay
+      return () => clearTimeout(timer);
+    }
+  }, [agenciesLoaded, isLoading]);
 
   // Update isMobile on resize
   useEffect(() => {
@@ -39,6 +51,16 @@ export default function App() {
 
   // Handler for toggle button
   const handleToggle = () => setShowMapMobile((prev) => !prev);
+
+  // Memoize agencies to prevent unnecessary map reloads
+  const agenciesToShow = useMemo(() => {
+    return filteredAgencies.length > 0 ? filteredAgencies : allAgencies;
+  }, [filteredAgencies, allAgencies]);
+
+  // Show splash page while loading or for minimum 3 seconds
+  if (!agenciesLoaded || isLoading || !splashComplete) {
+    return <SplashPage />;
+  }
 
   return (
     <div style={{ height: "100vh", display: "flex", flexDirection: "column" }}>
@@ -79,7 +101,7 @@ export default function App() {
         <div
           className={`map-responsive ${isMobile && !showMapMobile ? "hidden-mobile" : ""}`}
         >
-          <MapComponent agencies={filteredAgencies.length > 0 ? filteredAgencies : allAgencies} />
+          <MapComponent key="interactive-map" agencies={agenciesToShow} />
         </div>
       </div>
     </div>

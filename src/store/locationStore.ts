@@ -90,6 +90,7 @@ export const useLocationStore = create<LocationStore>((set, get) => ({
 
   fetchAgencies: async () => {
     if (get().agenciesLoaded) return;
+    set({ isLoading: true });
     try {
       const res = await fetch("https://tcfb-lambda-git-main-wavvsofficial-4880s-projects.vercel.app/api/my-endpoint", {
         method: 'GET',
@@ -104,7 +105,7 @@ export const useLocationStore = create<LocationStore>((set, get) => ({
         agenciesArray = data.agencies;
       }
       if (agenciesArray) {
-        set({ allAgencies: agenciesArray, agenciesLoaded: true });
+        set({ allAgencies: agenciesArray, agenciesLoaded: true, isLoading: false });
         get().filterAgencies(); // Update filteredAgencies after fetching new data
         console.log("[TCFB] Agencies loaded from endpoint.");
         console.log("First 3 agencies:", agenciesArray.slice(0, 3));
@@ -112,7 +113,7 @@ export const useLocationStore = create<LocationStore>((set, get) => ({
         throw new Error("API did not return an array: " + JSON.stringify(data));
       }
     } catch (e) {
-      set({ allAgencies: agenciesFallback, agenciesLoaded: true });
+      set({ allAgencies: agenciesFallback, agenciesLoaded: true, isLoading: false });
       get().filterAgencies(); // Update filteredAgencies after loading fallback data  
       console.log("[TCFB] Agencies loaded from static fallback data.");
       console.log("First 3 agencies:", agenciesFallback.slice(0, 3));
