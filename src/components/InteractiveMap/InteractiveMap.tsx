@@ -26,6 +26,56 @@ function MapComponent({ agencies }: { agencies: any[] }) {
   const { setSelectedId } = useSelectedAgencyStore();
   const { userLocation, currentSearchRadius, filteredAgencies, nearbyDistance } = useLocationStore();
 
+  // Add global print function for map info windows
+  React.useEffect(() => {
+    (window as any).printAgencyInfo = (id: string, name: string, address: string, phone: string, hours: string, directionsUrl: string) => {
+      const printWindow = window.open('', '_blank');
+      if (printWindow) {
+        const printContent = `
+          <!DOCTYPE html>
+          <html>
+            <head>
+              <title>Agency Information - ${name}</title>
+              <style>
+                body { font-family: 'Segoe UI', Arial, sans-serif; padding: 20px; }
+                h1 { color: #333; border-bottom: 2px solid #333; }
+                .section { margin: 15px 0; }
+                .label { font-weight: bold; color: #666; }
+              </style>
+            </head>
+            <body>
+              <h1>${name}</h1>
+              <div class="section">
+                <span class="label">Address:</span><br>
+                ${address}
+              </div>
+              <div class="section">
+                <span class="label">Phone:</span> ${phone}
+              </div>
+              <div class="section">
+                <span class="label">Hours:</span><br>
+                ${hours}
+              </div>
+              <div class="section">
+                <span class="label">Directions:</span><br>
+                <a href="${directionsUrl}" target="_blank">Get Directions</a>
+              </div>
+            </body>
+          </html>
+        `;
+        printWindow.document.write(printContent);
+        printWindow.document.close();
+        printWindow.focus();
+        printWindow.print();
+      }
+    };
+
+    // Cleanup function to remove global function
+    return () => {
+      delete (window as any).printAgencyInfo;
+    };
+  }, []);
+
   // Initialize map only once
   useEffect(() => {
     if (!window.google?.maps?.marker?.AdvancedMarkerElement) return;
@@ -108,12 +158,18 @@ function MapComponent({ agencies }: { agencies: any[] }) {
       markerRefs.current[agency.id] = marker;
       marker.addListener("click", () => {
         const html = `
-          <div style="font-family: 'Segoe UI'; max-width: 260px; padding: 12px;">
-            <h3 style="margin: 0; font-size: 1.1rem;">${agency.name}</h3>
-            <p style="margin: 4px 0;">${agency.address}, ${agency.city}</p>
-            <p style="margin: 4px 0;">📞 ${agency.phone || "No phone listed"}</p>
-            <p style="margin: 4px 0;">🕒 ${agency.hours || "Hours not listed"}</p>
-            <a href="${agency.directionsUrl}" target="_blank" style="color: #0066cc; text-decoration: underline;">➤ Get Directions</a>
+          <div class="info-window">
+            <h3>${agency.name}</h3>
+            <p class="address">${agency.address}, ${agency.city}</p>
+            <p class="contact-info">📞 ${agency.phone || "No phone listed"}</p>
+            <p class="hours">🕒 ${agency.hours || "Hours not listed"}</p>
+            <a href="${agency.directionsUrl}" target="_blank" class="directions-link">➤ Get Directions</a>
+            <button 
+              onclick="printAgencyInfo('${agency.id}', '${agency.name.replace(/'/g, "\\'")}', '${agency.address}, ${agency.city}', '${agency.phone || "No phone listed"}', '${agency.hours || "Hours not listed"}', '${agency.directionsUrl}')" 
+              class="print-btn"
+            >
+              Print
+            </button>
           </div>
         `;
         infoWindowRef.current?.setContent(html);
