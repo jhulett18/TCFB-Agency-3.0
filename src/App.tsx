@@ -26,15 +26,15 @@ export default function App() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // Show splash for minimum 3 seconds after data loads
+  // Show splash for minimum 2 seconds after initial data loads
   useEffect(() => {
-    if (agenciesLoaded && !isLoading) {
+    if (agenciesLoaded) {
       const timer = setTimeout(() => {
         setSplashComplete(true);
-      }, 3000); // 3 second delay
+      }, 2000); // 2 second delay
       return () => clearTimeout(timer);
     }
-  }, [agenciesLoaded, isLoading]);
+  }, [agenciesLoaded]);
 
   // Update isMobile on resize
   useEffect(() => {
@@ -52,13 +52,17 @@ export default function App() {
   // Handler for toggle button
   const handleToggle = () => setShowMapMobile((prev) => !prev);
 
-  // Memoize agencies to prevent unnecessary map reloads
+  // Memoize agencies to prevent unnecessary map reloads - deep comparison of IDs
   const agenciesToShow = useMemo(() => {
-    return filteredAgencies.length > 0 ? filteredAgencies : allAgencies;
-  }, [filteredAgencies, allAgencies]);
+    const agencies = filteredAgencies.length > 0 ? filteredAgencies : allAgencies;
+    return agencies;
+  }, [
+    filteredAgencies.map(a => a.id).sort().join(','), 
+    allAgencies.map(a => a.id).sort().join(',')
+  ]);
 
-  // Show splash page while loading or for minimum 3 seconds
-  if (!agenciesLoaded || isLoading || !splashComplete) {
+  // Show splash page only during initial load
+  if (!agenciesLoaded || !splashComplete) {
     return <SplashPage />;
   }
 
